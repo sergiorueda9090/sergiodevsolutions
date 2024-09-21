@@ -1,0 +1,783 @@
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title -->
+    <title>Srueda - Soluciones IT | Transformación Digital y Automatización</title>
+    <!-- Meta description -->
+    <meta name="description" content="Srueda ofrece soluciones de TI personalizadas, incluyendo transformación digital, automatización de procesos y servicios en la nube. Conoce cómo podemos ayudarte a crecer tu negocio.">
+    <!-- Meta robots -->
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Srueda - Soluciones IT | Transformación Digital y Automatización">
+    <meta property="og:description" content="Srueda ofrece soluciones de TI personalizadas, incluyendo transformación digital, automatización de procesos y servicios en la nube. Conoce cómo podemos ayudarte a crecer tu negocio.">
+    <meta property="og:image" content="{% static 'base/img/og-image.jpg">
+    <meta property="og:url" content="https://www.srueda.com">
+    <meta property="og:type" content="website">
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Srueda - Soluciones IT | Transformación Digital y Automatización">
+    <meta name="twitter:description" content="Srueda ofrece soluciones de TI personalizadas, incluyendo transformación digital, automatización de procesos y servicios en la nube. Conoce cómo podemos ayudarte a crecer tu negocio.">
+    <meta name="twitter:image" content="{% static 'base/img/twitter-image.jpg">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'base/img/favicon.png' %}">
+    <!-- Bootstrap Min CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}">
+    <!-- Animate Min CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/animate.min.css' %}">
+    <!-- FlatIcon CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/flaticon.css' %}">
+    <!-- Font Awesome Min CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/fontawesome.min.css' %}">
+    <!-- Bootstrap Icon CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/bootstrap-icons.css' %}">
+    <!-- Mean Menu CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/meanmenu.css' %}">
+    <!-- Magnific Popup Min CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/magnific-popup.min.css' %}">
+    <!-- Swiper Min CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/swiper.min.css' %}">
+    <!-- Owl Carousel Min CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/owl.carousel.min.css' %}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'base/css/responsive.css' %}">
+	<style>
+		.white-logo-main {
+    		color: white;
+			font-weight: 700;
+			font-family: 'Dosis', sans-serif;
+		}
+
+
+		.whatsapp-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.whatsapp-icon img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon::before, .whatsapp-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #25D366; /* Color de WhatsApp */
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.whatsapp-icon::before {
+    animation: wave 2s infinite ease-in-out;
+}
+
+.whatsapp-icon::after {
+    animation: wave 2s infinite ease-in-out 1s; /* Delay para el segundo círculo */
+}
+
+@keyframes wave {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+.whatsapp-icon:hover img {
+    transform: scale(1.2); /* Un pequeño zoom para el icono si deseas */
+}
+	</style>
+</head>
+
+
+<body cz-shortcut-listen="true">
+	{% block menu %}
+	<!-- Start Preloader Section -->
+	<div class="preloader preloader-deactivate">
+		<div class="loader">
+			<div class="shadow"></div>
+			<div class="box"></div>
+		</div>
+	</div>
+	<!-- End Preloader Section -->
+
+	<!-- Start Navbar Section -->
+	
+	<div class="navbar-section">
+		<div class="techvio-responsive-nav">
+			<div class="container">
+				<div class="techvio-responsive-menu">
+					<div class="logo">
+						<a href="{% url 'bases:home'  %}">
+							<h2 class="white-logo-main" alt="logo">SERGIO DEV SOLUTIONS</h2>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="techvio-nav">
+			<div class="container">
+				<nav class="navbar navbar-expand-md navbar-light">
+					<a class="navbar-brand" href="{% url 'bases:home'  %}">
+						<h2 class="white-logo-main" alt="logo">SERGIO DEV SOLUTIONS</h2>
+					</a>
+					<div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent" style="display: block;">
+						<ul class="navbar-nav">
+							<li class="nav-item"> 
+								<a href="#" class="nav-link">Home <i class="fas fa-chevron-down"></i></a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"> 
+										<a href="#" class="nav-link">Aprende AWS</a>
+									</li>
+									<li class="nav-item"> 
+										<a href="#" class="nav-link">Aprende Python</a>
+									</li>
+									<li class="nav-item"> 
+										<a href="#" class="nav-link">Aprende Django</a>
+									</li>
+								</ul>
+							</li>
+
+							<li class="nav-item">
+								<a class="nav-link" href="#mis-servicios">Mis servicios</a>
+							</li>
+
+							<li class="nav-item">
+								<a  href="#sobre-mi" class="nav-link">Acerca de mi</a>
+							</li>
+
+							<li class="nav-item">
+								<a href="#portafolio" class="nav-link">Portafolio</a>
+							</li>
+
+							<li class="nav-item">
+								<a href="#contactame" class="nav-link">Contáctame</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<!-- End Navbar Section -->
+	{% endblock menu %}
+
+	{% block page_content %}
+	<!-- Start Home Section -->
+	<div class="home-3 home-section">
+		<div id="particles-js"><canvas class="particles-js-canvas-el" style="width: 100%; height: 100%;" width="994" height="953"></canvas></div>
+		<div class="d-table">
+			<div class="d-table-cell">
+				<div class="container">
+					<div class="row align-items-center">
+						<div class="col-lg-6 col-md-12">
+							<div class="main-banner-content">
+								<ul class="social-icon-list">
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+									<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+								</ul>
+                                <h1>Software Development</h1>
+								<p>Hola, soy Sergio Rueda. Desarrollador de software apasionado por la tecnología, y me encantaría ser tu socio tecnológico.</p>
+								<div class="banner-btn">
+									<a class="default-btn-one" href="#mis-servicios">Mis Servicios <span></span></a>
+									<a class="default-btn-two" href="#contactame">Contáctame  <span></span></a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12" data-tilt="" style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);">
+							<div class="banner-image">
+								<img src="{% static 'base/img/home-font-3.png' %}" alt="image">
+							</div>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Home Section -->
+	
+	<!-- Start Feature Section -->
+    <section class="feature-section mt-5" id="mis-servicios">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+					<div class="section-title">
+						<h2 >Mis Servicios</h2>
+					</div>
+                </div>
+
+				{% for page in pages %}
+					<div class="col-lg-4 col-md-6">
+						<div class="feature-single-item">
+							{% if page.image %}
+								<img src="{{ page.image.url }}" alt="{{ page.title }}" width="500">
+							{% endif %}
+							<h3>{{ page.title }}</h3>
+							<p>
+								{{ page.description }}
+							</p>
+							<div class="feature-btn-box"> 
+								<a href="{% url 'blogdetails:blogdetails' page.slug %}" class="read-more"><i class="bi bi-arrow-right-short"></i> Learn More</a>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+
+            </div>
+
+        </div>
+    </section>
+	<!-- End Feature Section -->
+	
+	<!-- Start About Section -->
+	<section class="about-area section-padding" id="sobre-mi">
+		<div class="container">
+			<div class="row d-flex align-items-center">
+				<div class="col-lg-6 col-md-12">
+                    <div class="about-content">
+                        <h6 class="sub-title">Sobre Mi</h6> 
+                        <h2>Impulsando Tu Negocio con Soluciones Tecnológicas Personalizadas y Apasionadas</h2>
+                        <p>Hola, soy Sergio Rueda, y estoy emocionado de ser tu socio tecnológico. Con más de 6 años de experiencia en desarrollo de software, me especializo en crear soluciones web a medida adaptadas a tus necesidades únicas. Ya sea que necesites un sitio web impresionante, integraciones de API sin complicaciones, un chatbot poderoso o el despliegue de aplicaciones en la nube, estoy aquí para asegurarme de que la tecnología trabaje a tu favor. Mi objetivo es ofrecerte un servicio excepcional y ser tu socio de confianza en el mundo digital.</p>
+                        <div class="skills">
+                            <div class="skill-item">
+                                <h6>Creación de Páginas Web <em>100%</em></h6>
+                                <div class="skill-progress">
+                                    <div class="progres" data-value="100%" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h6>Integración de APIs y Pasarelas de Pago <em>100%</em></h6>
+                                <div class="skill-progress">
+                                    <div class="progres" data-value="100%" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h6>Desarrollo de Chatbots <em>100%</em></h6>
+                                <div class="skill-progress">
+                                    <div class="progres" data-value="100%" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h6>Despliegue en la Nube (AWS) <em>100%</em></h6>
+                                <div class="skill-progress">
+                                    <div class="progres" data-value="100%" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h6>Desarrollo de APIs Personalizadas <em>100%</em></h6>
+                                <div class="skill-progress">
+                                    <div class="progres" data-value="100%" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <h6>Consumo de WhatsApp API y Otras Plataformas <em>100%</em></h6>
+                                <div class="skill-progress">
+                                    <div class="progres" data-value="100%" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-btn-box"> 
+                            <a class="default-btn" href="about.html">Saber Más <span></span></a>
+                        </div>
+                    </div>
+				</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="about-image">
+						<img src="{% static 'base/img/about.jpg' %}" alt="About image">
+						<div class="years-design">
+							<h2>6</h2>
+							<h5>Years Of Experience</h5>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Section -->
+	
+	<!-- Start Counter Section -->
+	<section class="counter-area section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6 counter-item">
+					<div class="single-counter">
+						<div class="counter-contents">
+							<h2>
+								<span class="counter-number">6</span>
+								<span>+</span>
+							</h2>
+							<h3 class="counter-heading">Años de Experiencia</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 counter-item">
+					<div class="single-counter">
+						<div class="counter-contents">
+							<h2>
+								<span class="counter-number">12</span>
+								<span>+</span>
+							</h2>
+							<h3 class="counter-heading">Proyectos Completados</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 counter-item">
+					<div class="single-counter">
+						<div class="counter-contents">
+							<h2>
+								<span class="counter-number">12</span>
+								<span>+</span>
+							</h2>
+							<h3 class="counter-heading">Clientes Satisfechos</h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6 counter-item">
+					<div class="single-counter">
+						<div class="counter-contents">
+							<h2>
+								<span class="counter-number">5</span>
+								<span>+</span>
+							</h2>
+							<h3 class="counter-heading">Áreas de Especialización</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Counter Section -->
+	
+	<!-- Start Portfolio Section -->
+    <section class="portfolio-area bg-grey section-padding" id="portafolio">
+        <div class="container">
+            <div class="row">
+				<div class="col-md-12">
+					<div class="section-title">
+						<!--<h6 class="sub-title">Recent Works</h6>-->
+						<h2>Mi Portafolio</h2>
+					</div>
+				</div>
+                <div class="col-md-12">
+                    <div class="portfolio-list">
+                        <ul class="nav" id="portfolio-flters">
+                            <li class="filter filter-active" data-filter=".all">Todo</li>
+                            <li class="filter" data-filter=".application">Aplicaciones</li>
+                            <li class="filter" data-filter=".webdesign">Web design</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="portfolio-container" style="position: relative; height: 635.968px;">
+				<div class="row">
+                    <!-- portfolio-item -->
+                    <div class="col-lg-4 col-md-6 portfolio-grid-item all branding" style="position: absolute; left: 0px; top: 0px;">
+                        <div class="portfolio-item">
+							
+							<img src="{% static 'base/img/portfolio/coming.jpg' %}" alt="image">
+                            <div class="portfolio-content-overlay">
+								<p>Web Page | Social Media</p>
+								<h3><a href="#">Creative Web Design</a></h3>
+								<a class="portfolio-link-icon" href="#"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- portfolio-item -->
+                    <div class="col-lg-4 col-md-6 portfolio-grid-item all photography" style="position: absolute; left: 311.984px; top: 0px;">
+                        <div class="portfolio-item">
+							<img src="{% static 'base/img/portfolio/animales.webp' %}" alt="image">
+                            <div class="portfolio-content-overlay">
+								<p>Web Page | Social Media</p>
+								<h3><a href="#">Creative Web Design</a></h3>
+								<a class="portfolio-link-icon" href="#"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- portfolio-item -->
+                    <div class="col-lg-4 col-md-6 portfolio-grid-item all branding webdesign" style="position: absolute; left: 623.968px; top: 0px;">
+                        <div class="portfolio-item">
+							<img src="{% static 'base/img/portfolio/ecomerce1.jpg' %}" alt="image">
+                            <div class="portfolio-content-overlay">
+								<p>Web page | Social Media</p>
+								<h3><a href="#">Creative Web Design</a></h3>
+								<a class="portfolio-link-icon" href="#"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- portfolio-item -->
+                    <div class="col-lg-4 col-md-6 portfolio-grid-item all webdesign" style="position: absolute; left: 0px; top: 317.984px;">
+                        <div class="portfolio-item">
+							<img src="{% static 'base/img/portfolio/baby.png' %}" alt="image">
+                            <div class="portfolio-content-overlay">
+								<p>Web page | Social Media</p>
+								<h3><a href="#">Creative Web Design</a></h3>
+								<a class="portfolio-link-icon" href="#"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- portfolio-item -->
+                    <div class="col-lg-4 col-md-6 portfolio-grid-item all application" style="position: absolute; left: 311.984px; top: 317.984px;">
+                        <div class="portfolio-item">
+							<img src="{% static 'base/img/portfolio/joyeria.png' %}" alt="image">
+                            <div class="portfolio-content-overlay">
+								<p>Web page | Social Media</p>
+								<h3><a href="#">Creative Web Design</a></h3>
+								<a class="portfolio-link-icon" href="#"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- portfolio-item -->
+                    <div class="col-lg-4 col-md-6 portfolio-grid-item all application photography" style="position: absolute; left: 623.968px; top: 317.984px;">
+                        <div class="portfolio-item">
+							<img src="{% static 'base/img/portfolio/planta.png' %}" alt="image">
+                            <div class="portfolio-content-overlay">
+								<p>Web page | Social Media</p>
+								<h3><a href="#">Creative Web Design</a></h3>
+								<a class="portfolio-link-icon" href="#"><i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Portfolio Section -->
+	
+
+	<!-- Start Hire Section -->
+	<section class="hire-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 col-md-12">
+					<div class="hire-content">
+						<!--<h6 class="sub-title">Want to work with us?</h6>-->
+						<h2>¿Te encantaría contratar mis servicios?</h2>
+						<p>Impulsa tu negocio con soluciones de transformación digital, automatización de procesos y servicios en la nube diseñados para optimizar y acelerar tu crecimiento.</p>
+						<!--<div class="hire-btn">
+							<a class="default-btn" href="tel:3143801560">Call Now<span></span></a>
+							<a class="default-btn-one" href="contact.html">Contact Us<span></span></a>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Hire Section -->
+
+
+	<!-- Start Partner section -->
+	<section class="partner-section pt-100 pb-70">
+		<div class="container">
+			<div class="partner-title">
+				<h6 class="sub-title">Tecnologias Web</h6>
+				<h2>Tecnologias</h2>
+			</div>
+			<div class="partner-list">
+
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/awss.png' %}" alt="image">
+					</a>
+				</div>
+				
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/javascriptt.jpg' %}" alt="image">
+					</a>
+				</div>
+
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/react.png' %}" alt="image">
+					</a>
+				</div>
+
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/next.png' %}" alt="image">
+					</a>
+				</div>
+
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/python.jpg' %}" alt="image">
+					</a>
+				</div>
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/djangogreen.png' %}" alt="image">
+					</a>
+				</div>
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/php.png' %}" alt="image">
+					</a>
+				</div>
+				
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/code.png' %}" alt="image">
+					</a>
+				</div>
+
+
+				
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/What-is-PostgreSQL.png' %}" alt="image">
+					</a>
+				</div>
+
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/mysql.png' %}" alt="image">
+					</a>
+				</div>
+
+
+
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/git.png' %}" alt="image">
+					</a>
+				</div>
+				
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/wp.png' %}" alt="image">
+					</a>
+				</div>
+
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/shopy.png' %}" alt="image">
+					</a>
+				</div>
+
+				
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/what-is-woocommerce.jpg' %}" alt="image">
+					</a>
+				</div>
+
+				<div class="partner-item">
+					<a href="#0">
+						<img src="{% static 'base/img/docker.png' %}" alt="image">
+					</a>
+				</div>
+				
+	
+
+
+				
+
+			</div>
+		</div>
+	</section>
+	<!-- End Partner section -->
+	{% endblock page_content %}
+
+	{% block footer %}
+	<!-- Start Footer & Subscribe Section -->
+	<section class="footer-subscribe-wrapper" id="contactame">
+		<!-- Start Subscribe Section -->
+		<div class="subscribe-area">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-6 col-md-6">
+						<div class="subscribe-content">
+							<h2>Hablemos de Tu Proyecto</h2>
+							<p>Ofrezco soluciones tecnológicas personalizadas para hacer crecer tu negocio.</p>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6">
+						<a href="https://wa.me/573143801560" target="_blank" class="whatsapp-link">
+							<div class="whatsapp-icon">
+								<img src="{% static 'base/img/whatsapp1.png' %}" width="50px" height="50px" />
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Subscribe Section -->
+		<!-- Start Footer Section -->
+		<div class="footer-area ptb-100">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<a class="footer-logo" href="#">
+								<h3 style="color: white;">Sergio dev soluciotions</h3>
+							</a>
+							<p>Impulsando Tu Negocio con Soluciones Tecnológicas Personalizadas.</p>
+							<ul class="footer-social">
+								<li>
+									<a href="#"> <i class="fab fa-facebook-f"></i></a>
+								</li>
+								<li>
+									<a href="#"> <i class="fa-brands fa-x-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"> <i class="fab fa-youtube"></i></a>
+								</li>
+								<li>
+									<a href="#"> <i class="fab fa-linkedin"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Mis Servicios</h3>
+							</div>
+							<ul class="footer-quick-links">
+								<li><a href="#">Startup Solutions</a></li>
+								<li><a href="#">Web Development</a></li>
+								<li><a href="#">Landing Pages</a></li>
+								<li><a href="#">E-commerce</a></li>
+								<li><a href="#">Web Corporativa</a></li>
+								<li><a href="#">Despliegue de Aplicaciones Web en la Nube</a></li>
+								
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Mis Servicios</h3>
+							</div>
+							<ul class="footer-quick-links">
+								
+								<li><a href="#">Desarrollo de Software a la Medida</a></li>
+								<li><a href="#">Implementación de Diversas API</a></li>
+								<li><a href="#">Desarrollador de soluciones tecnológicas para trabajos de grado</a></li>
+								<li><a href="#">Apps Development</a></li>
+								<li><a href="#">SEO Optimization</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-6">
+						<div class="single-footer-widget">
+							<div class="footer-heading">
+								<h3>Contact Info</h3>
+							</div>
+							<div class="footer-info-contact">
+								<i class="flaticon-phone-call"></i>
+								<h3>Phone</h3>
+								<span><a href="tel:3143801560">3143801560</a></span>
+							</div>
+
+							<div class="footer-info-contact">
+								<i class="fa fa-whatsapp" aria-hidden="true"></i>
+								<h3>Whatsapp</h3>
+								<span><a href="https://wa.me/573143801560" target="_blank">3143801560</a></span>
+							</div>
+
+							
+							<div class="footer-info-contact">
+								<i class="flaticon-envelope"></i>
+								<h3>Email</h3>
+								<span><a href="mailto:demo@example.com">sergiodevsoluctions@sergiodevsoluctions.com</a></span>
+							</div>
+							<div class="footer-info-contact">
+								<i class="flaticon-placeholder"></i>
+								<span>Colombia, Santander, Bucaramanga</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Footer Section -->
+	</section>
+	<!-- End Footer & Subscribe Section -->
+	
+	<!-- Start Copy Right Section -->
+	<div class="copyright-area">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 col-md-6">
+					<p><i class="far fa-copyright"></i> 2024 Sergio dev soluciotions - All Rights Reserved.</p>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<ul>
+						<li><a href="terms-condition.html">Terms &amp; Conditions</a></li>
+						<li><a href="privacy-policy.html">Privacy Policy</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Copy Right Section -->
+	
+	<!-- Start Go Top Section -->
+	<div class="go-top">
+		<i class="fas fa-chevron-up"></i>
+		<i class="fas fa-chevron-up"></i>
+	</div>
+	<!-- End Go Top Section -->
+	{% endblock footer %}
+	<!-- jQuery Min JS -->
+	<script src="{% static 'base/js/jquery.min.js' %}"></script>
+	<!-- Popper Min JS -->
+	<script src="{% static 'base/js/popper.min.js' %}"></script>
+	<!-- Bootstrap Min JS -->
+	<script src="{% static 'base/js/bootstrap.bundle.min.js' %}"></script>
+	<!-- Mean Menu JS  -->
+	<script src="{% static 'base/js/jquery.meanmenu.js' %}"></script>
+	<!-- Appear Min JS -->
+	<script src="{% static 'base/js/jquery.appear.min.js' %}"></script>
+	<!-- CounterUp Min JS -->
+	<script src="{% static 'base/js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'base/js/jquery.counterup.min.js' %}"></script>
+	<!-- Owl Carousel Min JS -->
+	<script src="{% static 'base/js/owl.carousel.min.js' %}"></script>
+	<!-- Magnific Popup Min JS -->
+	<script src="{% static 'base/js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- Isotope Min JS -->
+	<script src="{% static 'base/js/isotope.pkgd.min.js' %}"></script>
+	<!-- Particles JS -->
+    <script src="{% static 'base/js/particles.min.js' %}"></script>
+    <script src="{% static 'base/js/particles-app.js' %}"></script>
+	<!-- Swiper Min JS -->
+	<script src="{% static 'base/js/swiper.min.js' %}"></script>
+	<!-- Vanilla Tilt Min JS -->
+	<script src="{% static 'base/js/vanilla-tilt.min.js' %}"></script>
+	<!-- WOW Min JS -->
+	<script src="{% static 'base/js/wow.min.js' %}"></script>
+	<!-- Main JS -->
+	<script src="{% static 'base/js/main.js' %}"></script>
+	
+
+
+</body></html>
