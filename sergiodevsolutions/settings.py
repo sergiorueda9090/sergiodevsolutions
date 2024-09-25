@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-q6_xlpnss)sytre&*+a(x6cs0#2e$n$lo!*wx714dk@z2$u%4t
 DEBUG = True
 
 #ALLOWED_HOSTS = ["*"]
-ALLOWED_HOSTS = ['sergiodevsolutions.com', 'www.sergiodevsolutions.com']
+ALLOWED_HOSTS = ['*','sergiodevsolutions.com', 'www.sergiodevsolutions.com']
 
 # Application definition
 
