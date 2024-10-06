@@ -1,0 +1,127 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+
+<style>
+    /* Estilos para deshabilitar los elementos */
+    .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        background-color: #f0f0f0; /* Color de fondo para indicar deshabilitado */
+        border: 1px solid #ddd; /* Borde para resaltar el estado deshabilitado */
+    }
+
+    .active {
+        border: 2px solid #007bff; /* Borde para indicar que está activo */
+    }
+
+    .container {
+        display: flex;
+    }
+    .tabs{
+        width: 20%;
+    }
+    .content {
+        width: 63%;
+    }
+    .video-container {
+        width: 18%;
+        padding-left: 20px;
+        position: relative;
+    }
+    .video-container iframe {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .step {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .step h2 {
+        margin-top: 0;
+    }
+    pre {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    code {
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+    .sticky {
+        position: fixed;
+        top: 20px;
+    }
+    .keyword {
+        color: #007bff; /* You can choose any color you like */
+        font-weight: bold;
+    }
+
+    .list-group-item.active {
+         background-color: #007bff;  /* Color de fondo para el ítem activo */
+        color: white;  /* Cambia el color del texto para el ítem activo */
+    }
+</style>
+
+	<!-- Start Page Title Section -->
+	<div class="page-title-area item-bg2">
+		<div class="d-table">
+			<div class="d-table-cell">
+				<div class="container">
+					<div class="page-title-content">
+						<h2 >Guía Paso a Paso para Instalar Django y crear tu primer aplicación</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+   
+
+    <div class="container mt-5">
+        
+        <!-- Contenido principal -->
+        <div class="tabs mb-3">
+            <div id="list-example" class="list-group">
+                {% for step in steps %}
+                
+                <a class="list-group-item list-group-item-action {% if step.slug == step_slug %}active{% endif %}"
+                   href="{% url 'course:course' course.slug step.slug %}">
+                    {{ step.name }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="content">
+            {% for content in contents %}
+                <div class="step">
+                    <h2>{{ content.title }}</h2>
+                    <p>{{ content.description|safe }}</p>
+                    {% if content.command != "--" %}
+                        <pre><code>{{ content.command }}</code></pre>
+                    {% endif %}
+                    {% if content.note != "--" %}
+                        <p>{{ content.note }}</p>
+                    {% endif %}
+                    {% if content.result != "--" %}
+                        <pre><code>{{ content.result }}</code></pre>
+                    {% endif %}
+                    {% if content.recomendation != "--" %}
+                        <div>
+                            {{ content.recomendation|safe }}  <!-- Aquí se usa el filtro 'safe' -->
+                        </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+        </div>
+        <!-- Contenedor de video -->
+        <div class="video-container" id="video-container">
+            <iframe src="https://www.youtube.com/embed/Bz7UQyXpeWk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+{% endblock page_content %}

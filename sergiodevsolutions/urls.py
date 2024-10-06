@@ -22,10 +22,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('',            include(('bases.urls',       'bases'),          namespace='bases')),
     path('blogdetails/',include(('blogdetails.urls', 'blogdetails'),    namespace='blogdetails')),
-    path('ecommerce',   include(('blogdetails.urls', 'ecommerce'),      namespace='ecommerce')),
-    path('corporativa', include(('blogdetails.urls', 'corporativa'),    namespace='corporativa')),
-    path('aws',         include(('blogdetails.urls', 'aws'),            namespace='aws')),
-    path('software',    include(('blogdetails.urls', 'aws'),            namespace='software')),
-    path('api',         include(('blogdetails.urls', 'api'),            namespace='api')),
+    path('course/',     include(('courses.urls',     'course'),         namespace='course')),
+
+    path('learn/',       include(('learn.urls', 'learn'),               namespace='learn')),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

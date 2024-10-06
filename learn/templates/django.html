@@ -1,0 +1,142 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+
+<style>
+    /* Estilos para deshabilitar los elementos */
+    .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        background-color: #f0f0f0; /* Color de fondo para indicar deshabilitado */
+        border: 1px solid #ddd; /* Borde para resaltar el estado deshabilitado */
+    }
+
+    .active {
+        border: 2px solid #007bff; /* Borde para indicar que está activo */
+    }
+
+    .container {
+        display: flex;
+    }
+    .tabs{
+        width: 20%;
+    }
+    .content {
+        width: 63%;
+    }
+    .video-container {
+        width: 18%;
+        padding-left: 20px;
+        position: relative;
+    }
+    .video-container iframe {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .step {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .step h2 {
+        margin-top: 0;
+    }
+    pre {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    code {
+        font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    }
+    .sticky {
+        position: fixed;
+        top: 20px;
+    }
+    .keyword {
+        color: #007bff; /* You can choose any color you like */
+        font-weight: bold;
+    }
+</style>
+
+	<!-- Start Page Title Section -->
+	<div class="page-title-area item-bg2">
+		<div class="d-table">
+			<div class="d-table-cell">
+				<div class="container">
+					<div class="page-title-content">
+						<h2 >Guía Paso a Paso para Instalar Django y crear tu primer aplicación</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+   
+
+    <div class="container mt-5">
+        
+        <!-- Contenido principal -->
+         <div class="tabs">
+            <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-item-1">Django - Create Virtual Environment</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">Install Django</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">Django Create project</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">Django Create App</a>
+              </div>
+         </div>
+
+        <div class="content">
+            {% for step in steps %}
+            <div class="step">
+                <h2>{{step.title}}</h2>
+                <p>{{step.description|safe}}</p>
+                <pre><code>{{step.command}}</code></pre>
+                <p>{{step.note}}</p>
+                <pre><code>{{step.result}}</code></pre>
+                <p>{{step.recomendation}}</p>
+            </div>
+            {% endfor %}
+
+
+            <div class="step">
+                <h2>Step 4: Activate environmet</h2>
+                <p>
+                    Then you have to activate the environment, by typing this command:
+                </p>
+                <pre><code>env/Scripts/activate.bat</code></pre>
+            </div>
+
+            <div class="step">
+                <h2>Step 4: Note</h2>
+                <p>
+                    Once the environment is activated, you will see this result in the command propmt:
+                </p>
+                <pre><code><span class="keyword">(env)</span> C:\Users\Your Name></code></pre>
+                <p><span class="keyword">Note:</span> You must activate the virtual environment every time you open the command prompt to work on your project</p>
+            </div>
+
+
+            <div class="step">
+                <h2>Step 1: Install Django</h2>
+                <p>
+                   Now, That we have created a virtual environment, we are ready to install Django
+                </p>
+                <p>
+                    <span class="keyword">Note: </span> Remember to install Django while you are in the virtual environment 
+                </p>
+             </div>
+
+
+        </div>
+
+        <!-- Contenedor de video -->
+        <div class="video-container" id="video-container">
+            <iframe src="https://www.youtube.com/embed/Bz7UQyXpeWk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+{% endblock page_content %}
